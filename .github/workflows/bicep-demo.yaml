@@ -1,0 +1,36 @@
+name: Bicep Pipeline Demo
+
+on: 
+  push: 
+    branches: 
+      - main
+
+
+permissions:
+    id-token: write
+    contents: read 
+
+jobs:
+
+
+  Bicep-demos-login:
+    name: run azure login
+    runs-on: ubuntu-latest
+    environment: DevTo-Demo
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: login to Azure 
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id:  ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+
+      - name: Bicep Ling
+        run: |
+          az bicep build --file bicep/main.bicep
+

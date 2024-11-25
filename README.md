@@ -1,6 +1,11 @@
-# bicep  pipeline
+# bicep  pipeline Demo
+
 Demo Github Bicep pipeline
 
+
+## setup the repository 
+
+Federated Identity 
 
 ```powershell
 $managedIdentityName = "mi-BicepDemo"
@@ -14,3 +19,4 @@ $subjectUri =  "repo:$($githubOrga)/$($repoName):environment:$($environmentName)
 
 New-AzFederatedIdentityCredential -ResourceGroupName managed-identity -IdentityName $managedIdentity.name  -Name fed-bicepDemo -Issuer "https://token.actions.githubusercontent.com" -Subject $subjectUri
 ```
+
