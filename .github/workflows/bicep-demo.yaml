@@ -30,7 +30,10 @@ jobs:
           subscription-id:  ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
 
-      - name: Bicep Ling
-        run: |
-          az bicep build --file bicep/main.bicep
+      - name: Bicep Lint
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az bicep build --file bicep/main.bicep
 
