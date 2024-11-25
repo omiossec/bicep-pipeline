@@ -41,7 +41,7 @@ resource subnet1 'Microsoft.Network/virtualNetworks/subnets@2024-01-01' =  {
 }
 
 
-resource subnet2 'Microsoft.Network/virtualNetworks/subnets@2024-01-01' = {
+resource subnet2 'Microsoft.Network/virtualNetworks/subnet@2024-01-01' = {
   parent: vnet
   name: subnet2Name
   
