@@ -43,5 +43,5 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az bicep lint --file bicep/main.bicep
+            az bicep lint --file ./bicep/main.bicep
 
