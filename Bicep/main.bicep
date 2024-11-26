@@ -1,22 +1,22 @@
 param location string = resourceGroup().location
 
 @description('VNet name')
-param vnetName string 
+param vnetName string = 'vnet1'
 
 @description('Vnet Address space')
-param vnetAddressPrefix string 
+param vnetAddressPrefix string = '10.0.0.0/8'
 
 @description('Subnet1 Prefix')
-param subnet1Prefix string 
+param subnet1Prefix string  = '10.0.0.0/24'
 
 @description('Subnet1 Name')
-param subnet1Name string  
+param subnet1Name string  = 'sub1'
 
 @description('Subnet2 Prefix')
-param subnet2Prefix string  
+param subnet2Prefix string  = '10.0.1.0/24'
 
 @description('Subnet2 Name')
-param subnet2Name string 
+param subnet2Name string  = 'sub2'
 
 
 // @description('Subnet3 Name')
