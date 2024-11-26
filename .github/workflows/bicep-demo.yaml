@@ -12,7 +12,7 @@ permissions:
 jobs:
 
   Bicep-demos-login:
-    name: run azure login
+    name: run azure tests
     runs-on: ubuntu-latest
     environment: DevTo-Demo
     steps:
@@ -43,7 +43,7 @@ jobs:
             az deployment group create --what-if --name whatif --template-file ./Bicep/main.bicep --resource-group ${{ vars.RESOURCE_GROUP }}
 
   Bicep-deploy:
-    name: run azure login
+    name: run azure deploy
     runs-on: ubuntu-latest
     environment: bicep-deploy
     needs: Bicep-demos-login

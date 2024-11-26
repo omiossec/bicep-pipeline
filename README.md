@@ -20,3 +20,16 @@ $subjectUri =  "repo:$($githubOrga)/$($repoName):environment:$($environmentName)
 New-AzFederatedIdentityCredential -ResourceGroupName managed-identity -IdentityName $managedIdentity.name  -Name fed-bicepDemo -Issuer "https://token.actions.githubusercontent.com" -Subject $subjectUri
 ```
 
+
+
+```powershell
+$managedIdentityName = "mi-BicepDemo"
+$repoName = "bicep-pipeline"
+$githubOrga = "omiossec"
+$environmentName = "bicep-deploy"
+
+$subjectUri =  "repo:$($githubOrga)/$($repoName):environment:$($environmentName)"
+
+New-AzFederatedIdentityCredential -ResourceGroupName managed-identity -IdentityName $managedIdentity.name  -Name fed-bicep-deploy -Issuer "https://token.actions.githubusercontent.com" -Subject $subjectUri
+```
+
