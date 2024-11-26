@@ -35,10 +35,10 @@ jobs:
           inlineScript: |
             az bicep lint --file ./Bicep/main.bicep
 
-      - name: Bicep Build
-        uses: azure/cli@v2
-        with:
+      - name: Bicep What-If 
+        uses: Azure/cli@v2 
+        with: 
           azcliversion: latest
-          inlineScript: |
-            az bicep build --file ./Bicep/main.bicep
+          inlineScript: | 
+            az deployment group create --what-if --name whatif-${{ github.run_id }} --template-file ./Bicep/main.bicep --resource-group ${{ environment:.RESOURCE_GROUP }}
 
