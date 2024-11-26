@@ -40,5 +40,5 @@ jobs:
         with: 
           azcliversion: latest
           inlineScript: | 
-            az deployment group create --what-if --name whatif-${{ github.run_id }} --template-file ./Bicep/main.bicep --resource-group ${{ environment:.RESOURCE_GROUP }}
+            az deployment group create --what-if --name whatif --template-file ./Bicep/main.bicep --resource-group ${{ environment:.RESOURCE_GROUP }}
 
