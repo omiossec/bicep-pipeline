@@ -40,5 +40,5 @@ jobs:
         with: 
           azcliversion: latest
           inlineScript: | 
-            az deployment group create --what-if --name whatif --template-file ./Bicep/main.bicep --resource-group ${{ env.RESOURCE_GROUP }}
+            az deployment group create --what-if --name whatif --template-file ./Bicep/main.bicep --resource-group ${{ vars.RESOURCE_GROUP }}
 
