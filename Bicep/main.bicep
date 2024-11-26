@@ -19,8 +19,8 @@ param subnet2Prefix string
 param subnet2Name string 
 
 
-@description('Subnet3 Name')
-param subnet3Name string 
+// @description('Subnet3 Name')
+// param subnet3Name string 
 
 resource vnet 'Microsoft.Network/virtualNetworks@2024-01-01' = {
   name: vnetName

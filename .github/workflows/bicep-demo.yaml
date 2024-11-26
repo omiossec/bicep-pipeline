@@ -33,5 +33,12 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
+            az bicep lint --file ./Bicep/main.bicep
+
+      - name: Bicep Build
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
             az bicep build --file ./Bicep/main.bicep
 

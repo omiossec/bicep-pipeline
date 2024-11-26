@@ -117,9 +117,6 @@
           },
           "what-if-short-circuiting": {
             "level": "warning"
-          },
-          "BCP081": {
-            "level": "error"
           }
         }
       }
