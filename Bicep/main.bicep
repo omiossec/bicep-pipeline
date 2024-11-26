@@ -47,5 +47,5 @@ resource subnet2 'Microsoft.Network/virtualNetworks/subnet@2024-01-01' = {
   
   properties: {
     addressPrefix: subnet2Prefix
-  
+  }
 }
