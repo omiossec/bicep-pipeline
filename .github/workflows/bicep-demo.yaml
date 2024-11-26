@@ -45,7 +45,8 @@ jobs:
   Bicep-deploy:
     name: run azure login
     runs-on: ubuntu-latest
-    environment: DevTo-Demo
+    environment: bicep-deploy
+    needs: Bicep-demos-login
     steps:
 
       - name: Checkout
@@ -59,7 +60,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
 
-      - name: Bicep What-If 
+      - name: Bicep deploy
         uses: Azure/cli@v2 
         with: 
           azcliversion: latest
